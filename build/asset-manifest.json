@@ -1,0 +1,10 @@
+{
+  "files": {
+    "main.js": "/LocumTrackerApp/static/js/main.a8d39545.js",
+    "index.html": "/LocumTrackerApp/index.html",
+    "main.a8d39545.js.map": "/LocumTrackerApp/static/js/main.a8d39545.js.map"
+  },
+  "entrypoints": [
+    "static/js/main.a8d39545.js"
+  ]
+}
