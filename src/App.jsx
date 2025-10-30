@@ -51,12 +51,27 @@ function App() {
 
   const fetchShifts = async () => {
     try {
-      const response = await fetch(GOOGLE_SCRIPT_URL);
+      const response = await fetch(GOOGLE_SCRIPT_URL, {
+        method: 'GET',
+        headers: {
+          'Content-Type': 'application/json',
+          'Accept': 'application/json',
+        },
+        mode: 'cors'
+      });
+      
+      if (!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`);
+      }
+      
       const data = await response.json();
+      console.log('Fetched data:', data); // Debug log
       setShifts(data);
+      setError(null);
       setLoading(false);
     } catch (err) {
-      setError('Failed to fetch shifts');
+      console.error('Fetch error:', err); // Debug log
+      setError(`Failed to fetch shifts: ${err.message}`);
       setLoading(false);
     }
   };
@@ -87,6 +102,11 @@ function App() {
     try {
       const response = await fetch(GOOGLE_SCRIPT_URL, {
         method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Accept': 'application/json',
+        },
+        mode: 'cors',
         body: JSON.stringify(newShift)
       });
 
