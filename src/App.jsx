@@ -26,8 +26,8 @@ import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
 import { DatePicker } from '@mui/x-date-pickers/DatePicker';
 import { format } from 'date-fns';
 
-// Replace this with your Google Apps Script Web App URL
-const GOOGLE_SCRIPT_URL = 'YOUR_DEPLOYED_WEB_APP_URL_GOES_HERE';
+// Google Apps Script Web App URL
+const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbybr9o705yTwsCltVTQIVn9WtP7W5YQ3-Z85soUncOiRlKV3k6_NA60M-rbQONBgbHzsw/exec';
 
 function App() {
   const [shifts, setShifts] = useState([]);
